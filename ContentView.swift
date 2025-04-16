@@ -8,6 +8,7 @@ struct ContentView: View {
         VStack{
             Image("Logo2")
                 .resizable()
+                .scaledToFit()
             TabView{
                 FieldView()
                     .tabItem{
