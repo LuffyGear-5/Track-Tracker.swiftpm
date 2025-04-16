@@ -6,8 +6,6 @@ struct ContentView: View {
     @State var SprintJumps = ""
     var body: some View {
         VStack{
-            Image("Logo2")
-                .resizable()
             TabView{
                 FieldView()
                     .tabItem{
