@@ -15,11 +15,11 @@ struct StartView: View {
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)
-                        .frame(width: 250, height: 150)
+                        .frame(width: 110, height: 60)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 35))
+                        .font(.custom("Verdana", size: 20))
                     
                         
                        
