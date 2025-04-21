@@ -4,7 +4,18 @@ import SwiftUI
 struct DistanceView: View {
     @State var text1 = ""
     var body: some View {
-        Text("Change")
+        ZStack{
+            List {
+                
+            }
+            
+            
+            TextField("", text: $text1)
+                .textFieldStyle(.roundedBorder)
+                .border(.orange)
+        }
     }
+    
 }
+
 
