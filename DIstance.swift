@@ -3,7 +3,7 @@ import SwiftUI
 
 struct DistanceView: View {
     @State var text1 = ""
-    @State var Distance : [String] = ["800", "1600", "3200", "4x800", "4x1500"]
+    @State var Distance : [String] = ["800m", "1600m", "3200m", "4x800m", "4x1500m"]
     var body: some View {
         ZStack{
             VStack{
