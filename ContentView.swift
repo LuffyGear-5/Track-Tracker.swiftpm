@@ -9,7 +9,7 @@ struct ContentView: View {
         HStack{
             Spacer()
             NavigationLink {
-                Appearance(customColor: customColor)
+                Appearance(customColor: $customColor)
             } label: {
                 Image(systemName: "paintbrush.fill")
             }
