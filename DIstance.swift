@@ -9,7 +9,7 @@ struct DistanceView: View {
             VStack{
                 
                 Button("800m") {
-                    
+                   
                 }
                 .padding()
                 .frame(width: 400, height: 100)
