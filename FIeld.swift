@@ -4,6 +4,7 @@ import SwiftUI
 struct FieldView: View {
     @State var text2 = ""
     @State var Field : [String] = ["Discus", "Shotput", "Long Jump", "Triple Jump", "High Jump"]
+    @Binding var customColor : Color
     var body: some View {
         ZStack{
             VStack{
@@ -13,7 +14,6 @@ struct FieldView: View {
                 }
                 .padding()
                 .frame(width: 400, height: 100)
-                .background(.orange)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
                 Button("Shotput") {
@@ -21,7 +21,6 @@ struct FieldView: View {
                 }
                 .padding()
                 .frame(width: 400, height: 100)
-                .background(.orange)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
                 Button("Long Jump") {
@@ -29,7 +28,6 @@ struct FieldView: View {
                 }
                 .padding()
                 .frame(width: 400, height: 100)
-                .background(.orange)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
                 Button("Triple Jump") {
@@ -37,7 +35,6 @@ struct FieldView: View {
                 }
                 .padding()
                 .frame(width: 400, height: 100)
-                .background(.orange)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
                 Button("High Jump") {
@@ -45,10 +42,10 @@ struct FieldView: View {
                 }
                 .padding()
                 .frame(width: 400, height: 100)
-                .background(.orange)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
             }
+            .background(customColor)
         }
     }
 }

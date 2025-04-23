@@ -12,23 +12,24 @@ struct ContentView: View {
                 Appearance(customColor: $customColor)
             } label: {
                 Image(systemName: "paintbrush.fill")
+                    .foregroundStyle(customColor)
             }
         }
         VStack{
             TabView{
-                FieldView()
+                FieldView(customColor: $customColor)
                     .tabItem{
                         Label("Field",
                               systemImage:"f.square")
                     }
                 
-                SprintView()
+                SprintView(customColor: $customColor)
                     .tabItem{
                         Label("Sprint",
                               systemImage:"s.square")
                     }
                 
-                DistanceView()
+                DistanceView(customColor: $customColor)
                     .tabItem{
                         Label("Distance",
                               systemImage:"d.square")
