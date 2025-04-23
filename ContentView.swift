@@ -36,7 +36,7 @@ struct ContentView: View {
                 
                 
             }
-            .accentColor(.orange)
+            .accentColor(color)
             .foregroundStyle(.orange)
             
         }
