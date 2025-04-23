@@ -7,19 +7,49 @@ struct DistanceView: View {
     var body: some View {
         ZStack{
             VStack{
-                List(Distance, id: \.self) { Events in
-                    Text(Events)
-                    
-                }
                 
-                HStack{
-                    TextField("", text: $text1)
-                        .textFieldStyle(.roundedBorder)
-                        .border(.orange)
+                Button("800m") {
                     
-                    Button("Add") {
-                    }
                 }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("1600m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("3200m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("4x800m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("4x1600m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                
+                
                 
                 
             }

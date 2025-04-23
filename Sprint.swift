@@ -3,24 +3,53 @@ import SwiftUI
 
 struct SprintView: View {
     @State var text3 = ""
-    @State var Sprint : [String] = ["100m", "200m", "400m", "110m Hurdles", "300m Hurdles", ]
     var body: some View {
         ZStack{
             VStack{
-                List(Sprint, id: \.self) {Events in
-                    Text(Events)
-                    
-                }
                 
-                HStack{
-                    TextField("", text: $text3)
-                        .textFieldStyle(.roundedBorder)
-                        .border(.orange)
+                Button("100m") {
                     
-                    Button("Add") {
-                        
-                    }
                 }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("200m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("400m") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("110m Hurdles") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("300m Hurdles") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                
+                
+                
             }
         }
 
