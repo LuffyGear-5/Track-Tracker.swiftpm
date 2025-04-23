@@ -1,18 +1,21 @@
 import SwiftUI
 
 struct Appearance: View {
-    @State var customColor: Color = Color(red: 1.0, green: 0.0, blue: 1.0)
+    @State var customColor: Color
     var body: some View {
-        NavigationLink(destination:ContentView(color: $customColor)){
+        Button{
+            customColor = Color(red:1.0,green:0.5,blue: 0.9)
+        }label:{
             Text("Magenta")
                 .frame(width: 110, height: 50)
                 .background(customColor)
-                .foregroundStyle(.black)
+                .foregroundStyle(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
         }
+        ColorPicker("Pick a color", selection: $customColor)
     }
 }
 
-#Preview {
-    Appearance()
-}
+//#Preview {
+//    Appearance()
+//}

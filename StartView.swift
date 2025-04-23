@@ -11,7 +11,7 @@ struct StartView: View {
                 .scaledToFit()
             
             Spacer()
-            NavigationLink(destination: ContentView(color: $customColor)) {
+            NavigationLink(destination: ContentView(customColor: $customColor)) {
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)

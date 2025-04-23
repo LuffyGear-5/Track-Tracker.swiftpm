@@ -4,19 +4,19 @@ struct ContentView: View {
     @State var Field = ""
     @State var Distance = ""
     @State var SprintJumps = ""
-    @Binding var color : Color
+    @Binding var customColor : Color
     var body: some View {
         HStack{
             Spacer()
             NavigationLink {
-                Appearance()
+                Appearance(customColor: Color)
             } label: {
                 Image(systemName: "paintbrush.fill")
             }
         }
         VStack{
             TabView{
-                FieldView()
+                FieldView(accentColor: customColor)
                     .tabItem{
                         Label("Field",
                               systemImage:"f.square")
@@ -36,7 +36,7 @@ struct ContentView: View {
                 
                 
             }
-            .accentColor(color)
+            .accentColor(customColor)
             .foregroundStyle(.orange)
             
         }
