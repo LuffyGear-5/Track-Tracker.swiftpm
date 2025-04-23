@@ -7,20 +7,47 @@ struct FieldView: View {
     var body: some View {
         ZStack{
             VStack{
-                List(Field, id: \.self) { Events in
-                    Text(Events)
+                
+                Button("Discus") {
                     
                 }
-                HStack{
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("Shotput") {
                     
-                    TextField("", text: $text2)
-                        .textFieldStyle(.roundedBorder)
-                        .border(.orange)
-                    
-                    Button("Add") {
-                        
-                    }
                 }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("Long Jump") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("Triple Jump") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                Button("High Jump") {
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .background(.orange)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
             }
         }
     }
