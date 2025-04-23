@@ -9,14 +9,14 @@ struct ContentView: View {
         HStack{
             Spacer()
             NavigationLink {
-                Appearance(customColor: Color)
+                Appearance(customColor: customColor)
             } label: {
                 Image(systemName: "paintbrush.fill")
             }
         }
         VStack{
             TabView{
-                FieldView(accentColor: customColor)
+                FieldView()
                     .tabItem{
                         Label("Field",
                               systemImage:"f.square")
