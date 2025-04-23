@@ -4,7 +4,7 @@ struct ContentView: View {
     @State var Field = ""
     @State var Distance = ""
     @State var SprintJumps = ""
-    @Binding var color : Color
+    @Binding var customColor : Color?
     var body: some View {
         HStack{
             Spacer()
