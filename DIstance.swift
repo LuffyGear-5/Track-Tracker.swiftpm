@@ -13,7 +13,9 @@ struct DistanceView: View {
                     m800()
                 }, label: {
                     Text("800m")
+                        
                         .frame(width: 400, height: 70)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -23,6 +25,7 @@ struct DistanceView: View {
                 }, label: {
                     Text("1600m")
                         .frame(width: 400, height: 70)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -32,6 +35,7 @@ struct DistanceView: View {
                 }, label: {
                     Text("3200m")
                         .frame(width: 400, height: 70)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -41,6 +45,7 @@ struct DistanceView: View {
                 }, label: {
                     Text("4x800m")
                         .frame(width: 400, height: 70)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -50,6 +55,7 @@ struct DistanceView: View {
                 }, label: {
                     Text("4x1600m")
                         .frame(width: 400, height: 70)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 })
                 .padding()
                 .foregroundStyle(.black)
