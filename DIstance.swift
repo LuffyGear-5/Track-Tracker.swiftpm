@@ -17,7 +17,7 @@ struct DistanceView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("1600m", destination: m1600())
@@ -26,7 +26,7 @@ struct DistanceView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("3200m", destination: m3200())
@@ -35,7 +35,7 @@ struct DistanceView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("4x800m", destination: m4x800())
@@ -44,7 +44,7 @@ struct DistanceView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("4x1600", destination: m4x1600())
@@ -53,7 +53,7 @@ struct DistanceView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 
             }
             .background(customColor)

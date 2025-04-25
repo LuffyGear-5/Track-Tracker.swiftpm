@@ -19,7 +19,7 @@ struct FieldView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("Shotput", destination: Shotput())
@@ -28,7 +28,7 @@ struct FieldView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("Long Jump", destination: LongJump())
@@ -37,7 +37,7 @@ struct FieldView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("Triple Jump", destination: TripleJump())
@@ -46,7 +46,7 @@ struct FieldView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("High Jump", destination: HighJump())
@@ -55,7 +55,7 @@ struct FieldView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
             }
             .background(customColor)
         }

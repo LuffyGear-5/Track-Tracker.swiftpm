@@ -16,7 +16,7 @@ struct SprintView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("200m", destination: m200())
@@ -25,7 +25,7 @@ struct SprintView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("400m", destination: m400())
@@ -34,7 +34,7 @@ struct SprintView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("110m Hurdles", destination: Hurdles110m())
@@ -43,7 +43,7 @@ struct SprintView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 NavigationStack{
                     
                     NavigationLink("300m Hurdles", destination: Hurdles300m())
@@ -52,7 +52,7 @@ struct SprintView: View {
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
-                .font(.largeTitle)
+                .font(.system(size: 60))
                 
                 
                 
