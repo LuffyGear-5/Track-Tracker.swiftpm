@@ -9,51 +9,49 @@ struct FieldView: View {
         ZStack{
             VStack{
                 
-                NavigationStack{
-                    
-                    NavigationLink("Discus", destination: Discus())
-                    
-                }
-                
-                
+                NavigationLink(destination: {
+                    Discus()
+                }, label: {
+                    Text("Discus")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("Shotput", destination: Shotput())
-                    
-                }
+                NavigationLink(destination: {
+                    Shotput()
+                }, label: {
+                    Text("Shotput")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("Long Jump", destination: LongJump())
-                    
-                }
+                NavigationLink(destination: {
+                    LongJump()
+                }, label: {
+                    Text("Long Jump")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("Triple Jump", destination: TripleJump())
-                    
-                }
+                NavigationLink(destination: {
+                    TripleJump()
+                }, label: {
+                    Text("Triple Jump")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("High Jump", destination: HighJump())
-                    
-                }
+                NavigationLink(destination: {
+                    HighJump()
+                }, label: {
+                    Text("High Jump")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
             }

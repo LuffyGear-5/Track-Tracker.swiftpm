@@ -9,51 +9,49 @@ struct DistanceView: View {
         ZStack{
             VStack{
                 
-                NavigationStack{
-                    
-                    NavigationLink("800m", destination: m800())
-                    
-                }
+                NavigationLink(destination: {
+                    m800()
+                }, label: {
+                    Text("800m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("1600m", destination: m1600())
-                    
-                }
+                NavigationLink(destination: {
+                    m1600()
+                }, label: {
+                    Text("1600m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                
-                NavigationLink{
+                NavigationLink(destination: {
                     m3200()
-                } label: {
+                }, label: {
                     Text("3200m")
-                        .frame(width: 400, height: 100)
-                }
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("4x800m", destination: m4x800())
-                    
-                }
+                NavigationLink(destination: {
+                    m4x800()
+                }, label: {
+                    Text("4x800m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("4x1600", destination: m4x1600())
-                    
-                }
+                NavigationLink(destination: {
+                    m4x1600()
+                }, label: {
+                    Text("4x1600m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
                 

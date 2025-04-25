@@ -3,7 +3,8 @@ import SwiftUI
 
 
 struct HighJump: View {
+    @State var text12 = ""
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        TextField("Add your distance", text: $text12)
     }
 }
