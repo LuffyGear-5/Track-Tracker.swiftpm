@@ -8,35 +8,45 @@ struct SprintView: View {
         ZStack{
             VStack{
                 
-                Button("100m") {
+                NavigationStack{
+                    
+                    NavigationLink("100m", destination: m100())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("200m") {
+                NavigationStack{
+                    
+                    NavigationLink("200m", destination: m200())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("400m") {
+                NavigationStack{
+                    
+                    NavigationLink("400m", destination: m400())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("110m Hurdles") {
+                NavigationStack{
+                    
+                    NavigationLink("110m Hurdles", destination: Hurdles110m())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("300m Hurdles") {
+                NavigationStack{
+                    
+                    NavigationLink("300m Hurdles", destination: Hurdles300m())
                     
                 }
                 .padding()
@@ -49,7 +59,7 @@ struct SprintView: View {
             }
             .background(customColor)
         }
-
+        
         
     }
 }

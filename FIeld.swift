@@ -9,35 +9,47 @@ struct FieldView: View {
         ZStack{
             VStack{
                 
-                Button("Discus") {
+                NavigationStack{
+                    
+                    NavigationLink("Discus", destination: Discus())
+                    
+                }
+                
+                
+                .padding()
+                .frame(width: 400, height: 100)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                NavigationStack{
+                    
+                    NavigationLink("Shotput", destination: Shotput())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("Shotput") {
+                NavigationStack{
+                    
+                    NavigationLink("Long Jump", destination: LongJump())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("Long Jump") {
+                NavigationStack{
+                    
+                    NavigationLink("Triple Jump", destination: TripleJump())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("Triple Jump") {
+                NavigationStack{
                     
-                }
-                .padding()
-                .frame(width: 400, height: 100)
-                .foregroundStyle(.black)
-                .font(.largeTitle)
-                Button("High Jump") {
+                    NavigationLink("High Jump", destination: HighJump())
                     
                 }
                 .padding()

@@ -2,9 +2,8 @@ import SwiftUI
 
 
 
-struct Hurdles_110m: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        Text("Change")
+struct Hurdles110m: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
     }
 }

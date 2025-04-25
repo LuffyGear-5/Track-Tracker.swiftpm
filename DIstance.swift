@@ -9,35 +9,45 @@ struct DistanceView: View {
         ZStack{
             VStack{
                 
-                Button("800m") {
-                   
-                }
-                .padding()
-                .frame(width: 400, height: 100)
-                .foregroundStyle(.black)
-                .font(.largeTitle)
-                Button("1600m") {
+                NavigationStack{
+                    
+                    NavigationLink("800m", destination: m800())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("3200m") {
+                NavigationStack{
+                    
+                    NavigationLink("1600m", destination: m1600())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("4x800m") {
+                NavigationStack{
+                    
+                    NavigationLink("3200m", destination: m3200())
                     
                 }
                 .padding()
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.largeTitle)
-                Button("4x1600m") {
+                NavigationStack{
+                    
+                    NavigationLink("4x800m", destination: m4x800())
+                    
+                }
+                .padding()
+                .frame(width: 400, height: 100)
+                .foregroundStyle(.black)
+                .font(.largeTitle)
+                NavigationStack{
+                    
+                    NavigationLink("4x1600", destination: m4x1600())
                     
                 }
                 .padding()

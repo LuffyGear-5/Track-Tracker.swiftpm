@@ -2,9 +2,8 @@ import SwiftUI
 
 
 
-struct m400: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        Text("Change")
+struct m400: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
     }
 }

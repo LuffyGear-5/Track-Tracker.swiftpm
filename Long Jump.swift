@@ -2,9 +2,9 @@ import SwiftUI
 
 
 
-struct Long_Jump: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        Text("Change")
+struct LongJump: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
     }
 }
+
