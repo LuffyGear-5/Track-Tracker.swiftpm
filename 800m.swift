@@ -3,8 +3,24 @@ import SwiftUI
 
 
 struct m800: View {
-    @State var text8 = ""
+    @State var time : [String] = []
+    @State var text1 = ""
     var body: some View {
-        TextField("Add your time", text: $text8)
+        VStack{
+            List(time,id: \.self){ times in
+                Text(times)
+            }
+            HStack{
+                TextField("Enter time", text: $text1)
+                    .textFieldStyle(.roundedBorder)
+                Button{
+                    time.append(text1)
+                    text1 = ""
+                } label: {
+                    Image(systemName: "plus.circle")
+                }
+            }
+        }
     }
 }
+
