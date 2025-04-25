@@ -8,49 +8,49 @@ struct SprintView: View {
         ZStack{
             VStack{
                 
-                NavigationStack{
-                    
-                    NavigationLink("100m", destination: m100())
-                    
-                }
+                NavigationLink(destination: {
+                    m100()
+                }, label: {
+                    Text("100m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("200m", destination: m200())
-                    
-                }
+                NavigationLink(destination: {
+                    m200()
+                }, label: {
+                    Text("200m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("400m", destination: m400())
-                    
-                }
+                NavigationLink(destination: {
+                    m400()
+                }, label: {
+                    Text("400m")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("110m Hurdles", destination: Hurdles110m())
-                    
-                }
+                NavigationLink(destination: {
+                    Hurdles110m()
+                }, label: {
+                    Text("110m Hurdles")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("300m Hurdles", destination: Hurdles300m())
-                    
-                }
+                NavigationLink(destination: {
+                    Hurdles300m()
+                }, label: {
+                    Text("300m Hurdles")
+                        .frame(width: 400, height: 70)
+                })
                 .padding()
-                .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
                 
