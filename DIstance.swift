@@ -27,13 +27,15 @@ struct DistanceView: View {
                 .frame(width: 400, height: 100)
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
-                NavigationStack{
-                    
-                    NavigationLink("3200m", destination: m3200())
-                    
+                
+                NavigationLink{
+                    m3200()
+                } label: {
+                    Text("3200m")
+                        .frame(width: 400, height: 100)
                 }
                 .padding()
-                .frame(width: 400, height: 100)
+                
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
                 NavigationStack{
