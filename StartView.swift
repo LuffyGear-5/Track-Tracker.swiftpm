@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StartView: View {
-    @State var customColor: Color = Color(red: 1.0, green: 0.0, blue: 1.0)
+    @State var customColor: Color = Color(red: 1.0, green: 0.5, blue: 0.0)
     var body: some View {
         NavigationStack{
                
