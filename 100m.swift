@@ -10,7 +10,7 @@ struct m100: View {
                 
                 List {
                     ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2f")")
+                        Text("\(number, specifier: "%.2f") seconds")
                     }
                     
                 }
