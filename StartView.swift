@@ -6,7 +6,7 @@ struct StartView: View {
         NavigationStack{
                
             
-            Image("Logo")
+            Image("NewLogo")
                 .resizable()
                 .scaledToFit()
             
