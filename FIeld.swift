@@ -13,7 +13,12 @@ struct FieldView: View {
                     Discus()
                 }, label: {
                     Text("Discus")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -22,7 +27,12 @@ struct FieldView: View {
                     Shotput()
                 }, label: {
                     Text("Shotput")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -31,7 +41,12 @@ struct FieldView: View {
                     LongJump()
                 }, label: {
                     Text("Long Jump")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -40,7 +55,12 @@ struct FieldView: View {
                     TripleJump()
                 }, label: {
                     Text("Triple Jump")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -49,13 +69,18 @@ struct FieldView: View {
                     HighJump()
                 }, label: {
                     Text("High Jump")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
             }
-            .background(customColor)
+//            .background(customColor)
         }
     }
 }

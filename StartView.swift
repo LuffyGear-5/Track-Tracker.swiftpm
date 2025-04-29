@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StartView: View {
-    @State var customColor: Color = Color(red: 1.0, green: 0.5, blue: 0.0)
+    @State var customColors: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
     var body: some View {
         NavigationStack{
                
@@ -11,12 +11,12 @@ struct StartView: View {
                 .scaledToFit()
             
             Spacer()
-            NavigationLink(destination: ContentView(customColor: $customColor)) {
+            NavigationLink(destination: ContentView(customColor: $customColors)) {
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)
                         .frame(width: 110, height: 60)
-                        .background(customColor)
+                        .background(customColors)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
                         .font(.custom("Verdana", size: 20))
