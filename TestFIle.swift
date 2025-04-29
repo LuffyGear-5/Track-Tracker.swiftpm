@@ -2,36 +2,36 @@ import SwiftUI
 
 struct TestView: View {
     @State private var inputText: String = ""
-    @State private var numbers: [Int] = []
+    @State private var numbers: [Double] = []
 
     var body: some View {
         VStack {
-            HStack {
+                
+                List {
+                    ForEach(sortedNumbers, id: \.self) { number in
+                        Text("\(number, specifier: "%.2f")")
+                    }
+                    
+                }
+            HStack{
                 TextField("Enter your time", text: $inputText)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
                 Button(action: addNumber) {
                     Text("Add")
                         .padding(.horizontal)
                 }
             }
-
-            List {
-                ForEach(sortedNumbers, id: \.self) { number in
-                    Text("\(number)")
-                }
-            }
         }
     }
-
-    var sortedNumbers: [Int] {
+    
+    var sortedNumbers: [Double] {
         numbers.sorted(by: <)
     }
 
     func addNumber() {
-        if let number = Int(inputText) {
+        if let number = Double(inputText) {
             numbers.append(number)
             inputText = ""
         }

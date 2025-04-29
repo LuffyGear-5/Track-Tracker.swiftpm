@@ -2,23 +2,39 @@ import SwiftUI
 
 
 struct m100: View {
-    @State var time : [String] = []
-    @State var text3 = ""
+    @State private var inputText: String = ""
+    @State private var numbers: [Double] = []
+
     var body: some View {
-        VStack{
-            List(time,id: \.self){ times in
-                Text(times)
-            }
+        VStack {
+                
+                List {
+                    ForEach(sortedNumbers, id: \.self) { number in
+                        Text("\(number, specifier: "%.2f")")
+                    }
+                    
+                }
             HStack{
-                TextField("Enter time", text: $text3)
-                    .textFieldStyle(.roundedBorder)
-                Button{
-                    time.append(text3)
-                    text3 = ""
-                } label: {
-                    Image(systemName: "plus.circle")
+                TextField("Enter your time", text: $inputText)
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                Button(action: addNumber) {
+                    Text("Add")
+                        .padding(.horizontal)
                 }
             }
+        }
+    }
+    
+    var sortedNumbers: [Double] {
+        numbers.sorted(by: <)
+    }
+
+    func addNumber() {
+        if let number = Double(inputText) {
+            numbers.append(number)
+            inputText = ""
         }
     }
 }
