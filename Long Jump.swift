@@ -29,7 +29,7 @@ struct LongJump: View {
     }
     
     var sortedNumbers: [Double] {
-        numbers.sorted(by: <)
+        numbers.sorted(by: >)
     }
 
     func addNumber() {
