@@ -11,12 +11,12 @@ struct TripleJump: View {
                 
                 List {
                     ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2f")")
+                        Text("\(number, specifier: "%.2f")m")
                     }
                     
                 }
             HStack{
-                TextField("Enter your Distance", text: $inputText)
+                TextField("Enter your distance", text: $inputText)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
