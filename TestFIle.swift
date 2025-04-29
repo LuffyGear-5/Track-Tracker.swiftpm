@@ -1,8 +1,6 @@
 import SwiftUI
 
-
-
-struct Hurdles110m: View {
+struct TestView: View {
     @State private var inputText: String = ""
     @State private var numbers: [Double] = []
 
@@ -11,7 +9,7 @@ struct Hurdles110m: View {
                 
                 List {
                     ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2f") seconds")
+                        Text("\(number, specifier: "%.2f")")
                     }
                     
                 }
@@ -38,4 +36,8 @@ struct Hurdles110m: View {
             inputText = ""
         }
     }
+}
+
+#Preview {
+    TestView()
 }
