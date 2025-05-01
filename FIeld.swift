@@ -5,6 +5,7 @@ struct FieldView: View {
     @State var text2 = ""
     @State var Field : [String] = ["Discus", "Shotput", "Long Jump", "Triple Jump", "High Jump"]
     @Binding var customColor : Color
+    @Binding var alertColor : Color
     var body: some View {
         ZStack{
             VStack{
@@ -13,7 +14,7 @@ struct FieldView: View {
                     Discus()
                 }, label: {
                     Text("Discus")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(alertColor)
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -27,7 +28,7 @@ struct FieldView: View {
                     Shotput()
                 }, label: {
                     Text("Shotput")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(alertColor)
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -41,7 +42,7 @@ struct FieldView: View {
                     LongJump()
                 }, label: {
                     Text("Long Jump")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(alertColor)
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -55,7 +56,7 @@ struct FieldView: View {
                     TripleJump()
                 }, label: {
                     Text("Triple Jump")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(alertColor)
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -69,7 +70,7 @@ struct FieldView: View {
                     HighJump()
                 }, label: {
                     Text("High Jump")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(alertColor)
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
