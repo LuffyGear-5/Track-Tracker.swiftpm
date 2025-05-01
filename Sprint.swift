@@ -12,7 +12,12 @@ struct SprintView: View {
                     m100()
                 }, label: {
                     Text("100m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -21,7 +26,12 @@ struct SprintView: View {
                     m200()
                 }, label: {
                     Text("200m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -30,7 +40,12 @@ struct SprintView: View {
                     m400()
                 }, label: {
                     Text("400m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -39,7 +54,12 @@ struct SprintView: View {
                     Hurdles110m()
                 }, label: {
                     Text("110m Hurdles")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -48,7 +68,12 @@ struct SprintView: View {
                     Hurdles300m()
                 }, label: {
                     Text("300m Hurdles")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -57,7 +82,7 @@ struct SprintView: View {
                 
                 
             }
-            .background(customColor)
+//            .background(customColor)
         }
         
         

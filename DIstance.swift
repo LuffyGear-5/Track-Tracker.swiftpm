@@ -14,9 +14,12 @@ struct DistanceView: View {
                 }, label: {
                     Text("800m")
                         
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                })
+            
+                        .font(.custom("Verdana", size: 60))                })
                 .padding()
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
@@ -24,8 +27,12 @@ struct DistanceView: View {
                     m1600()
                 }, label: {
                     Text("1600m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -34,8 +41,12 @@ struct DistanceView: View {
                     m3200()
                 }, label: {
                     Text("3200m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -44,8 +55,12 @@ struct DistanceView: View {
                     m4x800()
                 }, label: {
                     Text("4x800m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -54,15 +69,19 @@ struct DistanceView: View {
                     m4x1600()
                 }, label: {
                     Text("4x1600m")
-                        .frame(width: 400, height: 70)
+                        .foregroundStyle(.black)
+                        .frame(width: 400, height: 80)
+                        .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+                        .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
                 
             }
-            .background(customColor)
+//            .background(customColor)
             
             
         }
