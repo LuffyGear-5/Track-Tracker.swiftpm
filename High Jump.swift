@@ -16,7 +16,7 @@ struct HighJump: View {
                     
                 }
             HStack{
-                TextField("Enter your distance", text: $inputText)
+                TextField("Enter your height", text: $inputText)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
