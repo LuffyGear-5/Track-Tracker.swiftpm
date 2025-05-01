@@ -11,7 +11,7 @@ struct HighJump: View {
                 
                 List {
                     ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2f")m")
+                        Text("\(number, specifier: "%.2f")")
                     }
                     
                 }
