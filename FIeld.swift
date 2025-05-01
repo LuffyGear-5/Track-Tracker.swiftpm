@@ -17,7 +17,7 @@ struct FieldView: View {
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
+                    
                         .font(.custom("Verdana", size: 60))
                 })
                 .padding()
@@ -31,7 +31,7 @@ struct FieldView: View {
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
+                    
                         .font(.custom("Verdana", size: 60))
                 })
                 .padding()
@@ -45,7 +45,7 @@ struct FieldView: View {
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
+                    
                         .font(.custom("Verdana", size: 60))
                 })
                 .padding()
@@ -59,7 +59,7 @@ struct FieldView: View {
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
+                    
                         .font(.custom("Verdana", size: 60))
                 })
                 .padding()
@@ -73,14 +73,14 @@ struct FieldView: View {
                         .frame(width: 400, height: 80)
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
+                    
                         .font(.custom("Verdana", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-//            .background(customColor)
         }
     }
 }
