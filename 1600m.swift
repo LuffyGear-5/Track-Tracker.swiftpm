@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct RunEntry: Identifiable {
     let id = UUID()
     let time: TimeInterval
@@ -13,25 +12,29 @@ struct m1600: View {
     var body: some View {
         NavigationView {
             VStack {
-                Form {
+                List(runs) { run in
+                    Text("Time: \(formatTime(run.time))")
+                }
+
+                Spacer()
+
+                HStack {
                     TextField("Time (minutes)", text: $timeText)
                         .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
 
                     Button("Add Run") {
                         addRun()
                     }
-                }
-
-                List(runs) { run in
-                    Text("Time: \(formatTime(run.time))")
+                    .padding()
                 }
             }
-            .navigationTitle("Run Times")
         }
     }
 
     func addRun() {
-        guard let timeMinutes = Double(timeText) else { return }
+        guard let timeMinutes = Double(timeText), timeMinutes > 0 else { return }
 
         let timeInSeconds = timeMinutes * 60
         let newRun = RunEntry(time: timeInSeconds)
@@ -46,5 +49,3 @@ struct m1600: View {
         return "\(minutes)m \(seconds)s"
     }
 }
-
-
