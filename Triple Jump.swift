@@ -8,13 +8,20 @@ struct TripleJump: View {
 
     var body: some View {
         VStack {
-                
+            HStack{
                 List {
                     ForEach(sortedNumbers, id: \.self) { number in
                         Text("\(number, specifier: "%.2f")m")
                     }
                     
                 }
+                List {
+                    ForEach(sortedNumbers, id: \.self) { number in
+                        Text("\(number, specifier: "%.2f")m")
+                    }
+                    
+                }
+            }
             HStack{
                 TextField("Enter your distance", text: $inputText)
                     .keyboardType(.numberPad)
