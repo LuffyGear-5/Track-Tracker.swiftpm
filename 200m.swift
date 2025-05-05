@@ -4,38 +4,30 @@ import SwiftUI
 
 struct m200: View {
     @State private var inputText: String = ""
-    @State private var numbers: [Double] = []
-
+    @AppStorage("doubleArray") var arrayStorage : String = "[]"
     var body: some View {
         VStack {
-                
-                List {
-                    ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2`f") seconds")
-                    }
-                    
-                }
+            let doubles = try? JSONDecoder().decode([Double].self, from: arrayStorage.data(using: .utf8)!)
+            List(doubles!.indices,id: \.self) { i in
+                Text("\(doubles![Int(i)], specifier: "%.2f") seconds")
+            }
+            
             HStack{
                 TextField("Enter your time", text: $inputText)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                Button(action: addNumber) {
-                    Text("Add")
-                        .padding(.horizontal)
+                Button("Add Number"){
+                    if let number = Double(inputText) {
+                        var currentArray = try? JSONDecoder().decode([Double].self, from: arrayStorage.data(using: .utf8)!)
+                        currentArray!.append(number)
+                        if let encoded = try? JSONEncoder().encode(currentArray!), let jsonString = String(data: encoded, encoding: .utf8) {
+                            arrayStorage = jsonString
+                        }
+                        inputText = ""
+                    }
                 }
             }
-        }
-    }
-    
-    var sortedNumbers: [Double] {
-        numbers.sorted(by: <)
-    }
-
-    func addNumber() {
-        if let number = Double(inputText) {
-            numbers.append(number)
-            inputText = ""
         }
     }
 }
