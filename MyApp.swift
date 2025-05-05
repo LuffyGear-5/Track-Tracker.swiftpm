@@ -6,6 +6,7 @@ struct MyApp: App {
         WindowGroup {
             StartView()
                 .preferredColorScheme(.dark)
+               
         }
     }
 }

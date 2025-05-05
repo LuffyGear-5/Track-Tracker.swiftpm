@@ -6,20 +6,23 @@ struct ContentView: View {
     @State var SprintJumps = ""
     @State var orientation = UIDevice.current.orientation
     @Binding var customColor : Color
+    @Binding var alertColor : Color
+    
+    
     var body: some View {
         Text("\(orientation)")
         HStack{
             Spacer()
             NavigationLink {
-                Appearance(customColor: $customColor)
+                Appearance(customColor: $customColor, alertColor: $alertColor)
             } label: {
                 Image(systemName: "paintbrush.fill")
-                    .foregroundStyle(customColor)
+                    .foregroundStyle(.white)
             }
         }
         VStack{
             TabView{
-                FieldView(customColor: $customColor)
+                FieldView(customColor: $customColor, alertColor: $alertColor)
                     .tabItem{
                         Label("Field",
                               systemImage:"f.square")
@@ -39,8 +42,8 @@ struct ContentView: View {
                 
                 
             }
-            .accentColor(customColor)
-            .foregroundStyle(.orange)
+            .accentColor(.white)
+            
             
         }
     }
