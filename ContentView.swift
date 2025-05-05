@@ -4,10 +4,10 @@ struct ContentView: View {
     @State var Field = ""
     @State var Distance = ""
     @State var SprintJumps = ""
-    @State var orientation = UIDevice.current.orientation
+//    @State var orientation = UIDevice.current.orientation
     @Binding var customColor : Color
     var body: some View {
-        Text("\(orientation)")
+//        Text("\(orientation)")
         HStack{
             Spacer()
             NavigationLink {
