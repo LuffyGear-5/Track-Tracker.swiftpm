@@ -21,7 +21,12 @@ struct StartView: View {
             
                         .font(.custom("Verdana", size: 20))
                     
-                        
+//                    if UIDevice.current.orientation.isLandscape {
+//                        print("Device is in landscape mode")
+//                    } else if UIDevice.current.orientation.isPortrait {
+//                        print("Device is in portrait mode")
+//                    }
+//                    
                        
                 }
             }
