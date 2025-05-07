@@ -13,6 +13,7 @@ struct StartView: View{
                 .resizable()
                 .scaledToFit()
             
+            Spacer()
             Button{
                 devicePrompt = true
               

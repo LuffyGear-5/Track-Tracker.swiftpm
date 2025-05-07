@@ -81,7 +81,7 @@ struct DistanceView: View {
                 .font(.system(size: 60))
                 
             }
-//            .background(customColor)
+
             
             
         }
