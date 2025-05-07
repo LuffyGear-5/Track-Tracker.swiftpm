@@ -7,30 +7,54 @@ struct RunEntry: Identifiable {
 
 struct m1600: View {
     @State private var inputText: String = ""
-    @AppStorage("doubleArray") var arrayStorage : String = "[]"
+    @AppStorage("doubleArray") var arrayStorage: String = "[]"
+    @State private var doubles: [Double] = []
+
     var body: some View {
         VStack {
-            let doubles = try? JSONDecoder().decode([Double].self, from: arrayStorage.data(using: .utf8)!)
-            List(doubles!.indices,id: \.self) { i in
-                Text("\(doubles![Int(i)], specifier: "%.2f") seconds")
+            List {
+                ForEach(doubles.indices, id: \.self) { i in
+                    Text("\(doubles[i], specifier: "%.2f") seconds")
+                }
+                .onDelete(perform: deleteItems)
             }
-            
-            HStack{
+
+            HStack {
                 TextField("Enter your time", text: $inputText)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                Button("Add Number"){
+
+                Button("Add Number") {
                     if let number = Double(inputText) {
-                        var currentArray = try? JSONDecoder().decode([Double].self, from: arrayStorage.data(using: .utf8)!)
-                        currentArray!.append(number)
-                        if let encoded = try? JSONEncoder().encode(currentArray!), let jsonString = String(data: encoded, encoding: .utf8) {
-                            arrayStorage = jsonString
-                        }
+                        doubles.append(number)
+                        saveArray()
                         inputText = ""
                     }
                 }
             }
         }
+        .onAppear {
+            loadArray()
+        }
+    }
+
+    private func saveArray() {
+        if let encoded = try? JSONEncoder().encode(doubles),
+           let jsonString = String(data: encoded, encoding: .utf8) {
+            arrayStorage = jsonString
+        }
+    }
+
+    private func loadArray() {
+        if let data = arrayStorage.data(using: .utf8),
+           let decoded = try? JSONDecoder().decode([Double].self, from: data) {
+            doubles = decoded
+        }
+    }
+
+    private func deleteItems(at offsets: IndexSet) {
+        doubles.remove(atOffsets: offsets)
+        saveArray()
     }
 }
