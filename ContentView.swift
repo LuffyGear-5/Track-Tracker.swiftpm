@@ -5,8 +5,8 @@ struct ContentView: View {
     @State var Distance = ""
     @State var SprintJumps = ""
 //    @State var orientation = UIDevice.current.orientation
-    @Binding var customColor : Color
     @Binding var alertColor : Color
+    @State var customColor: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
     
     
     var body: some View {

@@ -1,37 +1,42 @@
 import SwiftUI
 
-struct StartView: View {
-    @State var customColors: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
+struct StartView: View{
     @State var alertColor: Color = .black
+    @State var selectedView: AnyView = AnyView(BlankView())
+    @State var customColor2: Color = .red
+    @State var devicePrompt = false
     var body: some View {
         NavigationStack{
-               
+            
             
             Image("NewLogo")
                 .resizable()
                 .scaledToFit()
             
-            Spacer()
-            NavigationLink(destination: ContentView(customColor: $customColors, alertColor: $alertColor)) {
+            Button{
+                devicePrompt = true
+              
+            }label:{
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)
                         .frame(width: 110, height: 60)
-                        .background(customColors)
+                        .background(customColor2)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
-                        .font(.custom("Verdana", size: 20))
                     
-//                    if UIDevice.current.orientation.isLandscape {
-//                        print("Device is in landscape mode")
-//                    } else if UIDevice.current.orientation.isPortrait {
-//                        print("Device is in portrait mode")
-//                    }
-//                    
-                       
+                        .font(.custom("Verdana", size: 20))
                 }
+                
             }
-            Spacer()
+            .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
+                NavigationLink("Let's Do It!", destination: SetupView())
+                    } message: {
+                        Text("")
+                    }
+            
         }
     }
+    
 }
+
+
