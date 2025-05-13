@@ -18,6 +18,8 @@ struct StartView: View{
                 devicePrompt = true
               
             }label:{
+           
+            NavigationLink(destination: ContentView(customColor: $customColors, alertColor: $alertColor)) {
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)
