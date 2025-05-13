@@ -8,6 +8,7 @@ struct SetupView: View {
     @State var question = ""
     @State var decisionColor: Color = .black
     
+    @Binding var alertColor : Color
     var body: some View {
         VStack{
             
@@ -78,6 +79,7 @@ struct SetupView: View {
             
          
         }
+       
     }
 }
 

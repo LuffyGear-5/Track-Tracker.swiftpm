@@ -1,56 +1,94 @@
 import SwiftUI
 
-
 struct m4x1600: View {
-    @State private var inputText: String = ""
-    @AppStorage("doubleArray") var arrayStorage: String = "[]"
-    @State private var doubles: [Double] = []
-
+    @State var inputText: String = ""
+    @AppStorage("doubleArray") var arrayStorage: String = ""
+    @State var doubles: [Double] = []
+    @State var dates: [Date] = []
+    @State var currentDate = Date()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    
+    var sortedEntries: [(time: Double, date: Date, originalIndex: Int)] {
+        return doubles.indices.map { i in
+            (time: doubles[i], date: dates[i], originalIndex: i)
+        }
+        .sorted { $0.time < $1.time }
+    }
+    
     var body: some View {
         VStack {
             List {
-                ForEach(doubles.indices, id: \.self) { i in
-                    Text("\(doubles[i], specifier: "%.2f") seconds")
+                ForEach(sortedEntries, id: \.originalIndex) { entry in
+                    HStack {
+                        Text("\(entry.time, specifier: "%.2f") minutes")
+                        Spacer()
+                        Text(formattedDate(entry.date))
+                            .font(.caption)
+                    }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteItemsSorted)
             }
-
+            
             HStack {
                 TextField("Enter your time", text: $inputText)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                
                 Button("Add Number") {
                     if let number = Double(inputText) {
                         doubles.append(number)
+                        dates.append(currentDate)
                         saveArray()
                         inputText = ""
                     }
                 }
             }
+            .padding()
         }
         .onAppear {
             loadArray()
         }
+        .onReceive(timer) { input in
+            currentDate = input
+        }
     }
-
-    private func saveArray() {
-        if let encoded = try? JSONEncoder().encode(doubles),
-           let jsonString = String(data: encoded, encoding: .utf8) {
-            arrayStorage = jsonString
+    
+    func formattedDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
+    }
+    
+    func saveArray() {
+        let combined = zip(doubles, dates).map { "\($0)|\($1.timeIntervalSince1970)" }
+        arrayStorage = combined.joined(separator: ",")
+    }
+    
+    func loadArray() {
+        let entries = arrayStorage.split(separator: ",")
+        doubles = []
+        dates = []
+        for entry in entries {
+            let parts = entry.split(separator: "|")
+            if parts.count == 2,
+               let value = Double(parts[0]),
+               let timestamp = TimeInterval(parts[1]) {
+                doubles.append(value)
+                dates.append(Date(timeIntervalSince1970: timestamp))
+            }
         }
     }
 
-    private func loadArray() {
-        if let data = arrayStorage.data(using: .utf8),
-           let decoded = try? JSONDecoder().decode([Double].self, from: data) {
-            doubles = decoded
+    
+    func deleteItemsSorted(at offsets: IndexSet) {
+        let indicesToDelete = offsets.map { sortedEntries[$0].originalIndex }
+        for index in indicesToDelete.sorted(by: >) {
+            doubles.remove(at: index)
+            dates.remove(at: index)
         }
-    }
-
-    private func deleteItems(at offsets: IndexSet) {
-        doubles.remove(atOffsets: offsets)
         saveArray()
     }
 }

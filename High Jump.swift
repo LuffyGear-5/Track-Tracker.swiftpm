@@ -1,25 +1,24 @@
 import SwiftUI
 
-
-
 struct HighJump: View {
     @State private var inputText: String = ""
-    @State private var numbers: [Double] = []
-
+    @State private var numbers: [String] = []
+    
     var body: some View {
         VStack {
-                
-                List {
-                    ForEach(sortedNumbers, id: \.self) { number in
-                        Text("\(number, specifier: "%.2f")")
-                    }
-                    
+            List {
+                ForEach(Array(numbers.enumerated()), id: \.element) { index, number in
+                    Text(number)
                 }
-            HStack{
-                TextField("Enter your height", text: $inputText)
-                    .keyboardType(.numberPad)
+                .onDelete(perform: deleteNumber)
+            }
+            
+            HStack {
+                TextField("Enter your height in feet and in'", text: $inputText)
+                
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                
                 Button(action: addNumber) {
                     Text("Add")
                         .padding(.horizontal)
@@ -28,14 +27,17 @@ struct HighJump: View {
         }
     }
     
-    var sortedNumbers: [Double] {
-        numbers.sorted(by: >)
-    }
-
     func addNumber() {
-        if let number = Double(inputText) {
-            numbers.append(number)
-            inputText = ""
-        }
+        
+        numbers.append(inputText)
+        inputText = ""
+        
     }
+    
+    func deleteNumber(at offsets: IndexSet) {
+        numbers.remove(atOffsets: offsets)
+    }
+}
+#Preview {
+    HighJump()
 }
