@@ -25,7 +25,7 @@ struct Shotput: View {
             }
 
             HStack{
-                TextField("Enter your distance", text: $inputText)
+                TextField("Enter your distance in meters", text: $inputText)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()

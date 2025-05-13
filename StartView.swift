@@ -30,7 +30,9 @@ struct StartView: View{
                         .font(.custom("Verdana", size: 20))
                 }
                 
+                
             }
+            Spacer()
             .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
                 NavigationLink("Let's Do It!", destination: SetupView())
                     } message: {
