@@ -29,6 +29,7 @@ struct StartView: View{
                 }
                 
             }
+            Spacer()
             .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
                 NavigationLink("Let's Do It!", destination: SetupView())
                     } message: {
