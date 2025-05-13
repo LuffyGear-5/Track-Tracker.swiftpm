@@ -16,10 +16,9 @@ struct StartView: View{
             Spacer()
             Button{
                 devicePrompt = true
-              
+                
             }label:{
-           
-            NavigationLink(destination: ContentView(customColor: $customColors, alertColor: $alertColor)) {
+                
                 ZStack{
                     Text("Begin!")
                         .foregroundStyle(.black)
@@ -33,11 +32,11 @@ struct StartView: View{
                 
             }
             Spacer()
-            .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
-                NavigationLink("Let's Do It!", destination: SetupView())
-                    } message: {
-                        Text("")
-                    }
+                .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
+                    NavigationLink("Let's Do It!", destination: SetupView())
+                } message: {
+                    Text("")
+                }
             
         }
     }
