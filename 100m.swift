@@ -79,3 +79,6 @@ struct m100: View {
         saveArray()
     }
 }
+#Preview(body: {
+    m100()
+})
