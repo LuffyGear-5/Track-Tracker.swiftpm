@@ -1,25 +1,34 @@
 import SwiftUI
 
 struct m3200: View {
-    @State private var inputText: String = ""
+    @State var inputText: String = ""
     @AppStorage("doubleArray") var arrayStorage: String = ""
-    @State private var doubles: [Double] = []
-    @State private var dates: [Date] = []
-    @State private var currentDate = Date()
-    
+    @State var doubles: [Double] = []
+    @State var dates: [Date] = []
+    @State var currentDate = Date()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    
+    var sortedEntries: [(time: Double, date: Date, originalIndex: Int)] {
+        return doubles.indices.map { i in
+            (time: doubles[i], date: dates[i], originalIndex: i)
+        }
+        .sorted { $0.time < $1.time }
+    }
     
     var body: some View {
         VStack {
-            ForEach(doubles.indices, id: \.self) { i in
-                HStack {
-                    Text("\(doubles[i], specifier: "%.2f") seconds")
-                    Text(formattedDate(dates[i]))
-                        .font(.caption)
-                        .padding()
+            List {
+                ForEach(sortedEntries, id: \.originalIndex) { entry in
+                    HStack {
+                        Text("\(entry.time, specifier: "%.2f") seconds")
+                        Spacer()
+                        Text(formattedDate(entry.date))
+                            .font(.caption)
+                    }
                 }
+                .onDelete(perform: deleteItemsSorted)
             }
-            .onDelete(perform: deleteItems)
             
             HStack {
                 TextField("Enter your time", text: $inputText)
@@ -54,7 +63,6 @@ struct m3200: View {
     }
     
     func saveArray() {
-        // Convert to a string format (e.g., JSON)
         let combined = zip(doubles, dates).map { "\($0)|\($1.timeIntervalSince1970)" }
         arrayStorage = combined.joined(separator: ",")
     }
@@ -73,10 +81,14 @@ struct m3200: View {
             }
         }
     }
+
     
-    func deleteItems(at offsets: IndexSet) {
-        doubles.remove(atOffsets: offsets)
-        dates.remove(atOffsets: offsets)
+    func deleteItemsSorted(at offsets: IndexSet) {
+        let indicesToDelete = offsets.map { sortedEntries[$0].originalIndex }
+        for index in indicesToDelete.sorted(by: >) {
+            doubles.remove(at: index)
+            dates.remove(at: index)
+        }
         saveArray()
     }
 }
