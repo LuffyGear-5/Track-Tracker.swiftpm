@@ -21,7 +21,7 @@ struct m800: View {
             List {
                 ForEach(sortedEntries, id: \.originalIndex) { entry in
                     HStack {
-                        Text("\(entry.time, specifier: "%.2f") seconds")
+                        Text("\(entry.time, specifier: "%.2f") minutes")
                         Spacer()
                         Text(formattedDate(entry.date))
                             .font(.caption)
