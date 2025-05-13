@@ -54,7 +54,6 @@ struct m4x800: View {
     }
     
     func saveArray() {
-        // Convert to a string format (e.g., JSON)
         let combined = zip(doubles, dates).map { "\($0)|\($1.timeIntervalSince1970)" }
         arrayStorage = combined.joined(separator: ",")
     }
