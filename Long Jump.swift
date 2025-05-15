@@ -5,21 +5,24 @@ struct LongJump: View {
     @State private var numbers: [Double] = []
     @State private var numbers2: [Double] = []
 
+    private let metersKey = "SavedMeters"
+    private let feetKey = "SavedFeet"
+
     var body: some View {
         VStack {
             HStack {
                 List {
-                    ForEach(Array(numbers.enumerated()), id: \.offset) { index, number in
+                    ForEach(Array(numbers.enumerated()), id: \.element) { index, number in
                         Text("\(number, specifier: "%.2f")m")
                     }
                     .onDelete(perform: deleteNumber)
                 }
 
                 List {
-                    ForEach(Array(numbers2.enumerated()), id: \.offset) { index, number in
+                    ForEach(Array(numbers2.enumerated()), id: \.element) { index, number in
                         Text("\(number, specifier: "%.2f")Ft")
                     }
-                    .onDelete(perform: deleteNumber)
+                    .onDelete(perform: deleteNumber2)
                 }
             }
 
@@ -35,6 +38,7 @@ struct LongJump: View {
                 }
             }
         }
+        .onAppear(perform: loadData)
     }
 
     func addNumber() {
@@ -42,14 +46,33 @@ struct LongJump: View {
             numbers.append(number)
             numbers2.append(number * 3.28084)
             inputText = ""
+            saveData()
         }
     }
 
     func deleteNumber(at offsets: IndexSet) {
         numbers.remove(atOffsets: offsets)
         numbers2.remove(atOffsets: offsets)
+        saveData()
+    }
+
+    func deleteNumber2(at offsets: IndexSet) {
+        numbers.remove(atOffsets: offsets)
+        numbers2.remove(atOffsets: offsets)
+        saveData()
+    }
+
+    func saveData() {
+        UserDefaults.standard.set(numbers, forKey: metersKey)
+        UserDefaults.standard.set(numbers2, forKey: feetKey)
+    }
+
+    func loadData() {
+        numbers = UserDefaults.standard.array(forKey: metersKey) as? [Double] ?? []
+        numbers2 = UserDefaults.standard.array(forKey: feetKey) as? [Double] ?? []
     }
 }
-#Preview(body: {
-    LongJump()
-})
+
+#Preview {
+    Discus()
+}

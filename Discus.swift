@@ -3,8 +3,10 @@ import SwiftUI
 struct Discus: View {
     @State private var inputText: String = ""
     @State private var numbers: [Double] = []
-    @State private var inputText2: String = ""
     @State private var numbers2: [Double] = []
+
+    private let metersKey = "SavedMeters"
+    private let feetKey = "SavedFeet"
 
     var body: some View {
         VStack {
@@ -15,7 +17,7 @@ struct Discus: View {
                     }
                     .onDelete(perform: deleteNumber)
                 }
-                
+
                 List {
                     ForEach(Array(numbers2.enumerated()), id: \.element) { index, number in
                         Text("\(number, specifier: "%.2f")Ft")
@@ -29,13 +31,14 @@ struct Discus: View {
                     .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                
+
                 Button(action: addNumber) {
                     Text("Add")
                         .padding(.horizontal)
                 }
             }
         }
+        .onAppear(perform: loadData)
     }
 
     func addNumber() {
@@ -43,21 +46,30 @@ struct Discus: View {
             numbers.append(number)
             numbers2.append(number * 3.28084)
             inputText = ""
+            saveData()
         }
     }
 
     func deleteNumber(at offsets: IndexSet) {
-        for index in offsets {
-            numbers.remove(at: index)
-            numbers2.remove(at: index)
-        }
+        numbers.remove(atOffsets: offsets)
+        numbers2.remove(atOffsets: offsets)
+        saveData()
     }
 
     func deleteNumber2(at offsets: IndexSet) {
-        for index in offsets {
-            numbers.remove(at: index)
-            numbers2.remove(at: index)
-        }
+        numbers.remove(atOffsets: offsets)
+        numbers2.remove(atOffsets: offsets)
+        saveData()
+    }
+
+    func saveData() {
+        UserDefaults.standard.set(numbers, forKey: metersKey)
+        UserDefaults.standard.set(numbers2, forKey: feetKey)
+    }
+
+    func loadData() {
+        numbers = UserDefaults.standard.array(forKey: metersKey) as? [Double] ?? []
+        numbers2 = UserDefaults.standard.array(forKey: feetKey) as? [Double] ?? []
     }
 }
 
