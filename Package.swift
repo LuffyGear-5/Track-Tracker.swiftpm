@@ -19,7 +19,7 @@ let package = Package(
             bundleIdentifier: "org.jhhs.628399.Track-Tracker",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .images),
+            appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.red),
             supportedDeviceFamilies: [
                 .pad,
