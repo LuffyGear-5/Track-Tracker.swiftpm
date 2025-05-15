@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StartView: View{
-    @State var alertColor: Color = .black
+    @State var alertColor: Color = .black   
     @State var selectedView: AnyView = AnyView(BlankView())
     @State var customColor2: Color = .red
     @State var devicePrompt = false
@@ -33,7 +33,7 @@ struct StartView: View{
             }
             Spacer()
             .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
-                NavigationLink("Let's Do It!", destination: SetupView())
+                NavigationLink("Let's Do It!", destination: SetupView( alertColor: $alertColor))
                     } message: {
                         Text("")
                     }
