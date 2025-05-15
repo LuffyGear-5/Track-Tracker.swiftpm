@@ -8,67 +8,74 @@ struct SetupView: View {
     @State var question = ""
     @State var decisionColor: Color = .black
     @State var deviceModelState2 = ""
+    @Binding var alertColor: Color
+    @State var decisionColor2: Color = .black
     var body: some View {
-        VStack{
-            
-            Text("Current Device: \(deviceModel) \(deviceModelNumbered) \(deviceModelState)")
-                .padding(50)
-            Menu{
-                Button{
-                    deviceModel = "iPhone"
-                    deviceModelDisplay = "iPhone"
-                    deviceModelState = ""
-                    question = "Which Model?"
-                    decisionColor = .white
+        NavigationStack{
+            VStack{
+                
+                Text("Selected Device: \(deviceModel) ")
+                
+                Text("Orientation Selected: ")
+                    .padding(50)
+                Menu{
+                    Button{
+                        deviceModel = "iPhone"
+                        deviceModelDisplay = "iPhone"
+                        deviceModelState = ""
+                        question = "Which Model?"
+                        decisionColor = .white
+                    }label:{
+                        Text("iPhone")
+                    }
+                    Button{
+                        deviceModel = "iPad"
+                        deviceModelDisplay = "iPad"
+                        deviceModelNumbered = ""
+                        deviceModelState = ""
+                        question = "Which Model?"
+                        decisionColor = .white
+                    }label:{
+                        Text("iPad")
+                    }
                 }label:{
-                    Text("iPhone")
+                    Text("What Device Are You Using? ↓" )
+                        .foregroundStyle(.black)
+                        .frame(width: 250, height: 25)
+                        .background(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                    
                 }
-                Button{
-                    deviceModel = "iPad"
-                    deviceModelDisplay = "iPad"
-                    deviceModelNumbered = ""
-                    deviceModelState = ""
-                    question = "Which Model?"
-                    decisionColor = .white
+                .padding(20)
+                
+                Menu{
+                    Button{
+                        decisionColor2 = .white
+                    }label:{
+                        HStack{
+                            Text("Portrait")
+                            Image(systemName: "rectangle.portrait")
+                        }
+                    }
+                    Button{
+                        decisionColor2 = .white
+                    }label:{
+                        HStack{
+                            Text("Landscape")
+                            Image(systemName: "ipad.gen2.landscape")
+                        }
+                    }
                 }label:{
-                    Text("iPad")
+                    Text("What Orientation Would You Like To Use?")
+                        .foregroundStyle(.black)
+                        .frame(width: 350, height: 25)
+                        .background(decisionColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
-            }label:{
-                Text("What Device Are You Using? ↓" )
-                    .foregroundStyle(.black)
-                    .frame(width: 250, height: 25)
-                    .background(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                
                 
             }
-            Text(deviceModelDisplay)
-            .padding(20)
-           
-            Menu{
-                Button{
-                    
-                }label:{
-                    HStack{
-                        Text("Portrait")
-                        Image(systemName: "rectangle.portrait")
-                    }
-                }
-                Button{
-                    
-                }label:{
-                    HStack{
-                        Text("Portrait")
-                        Image(systemName: "ipad.gen2.landscape")
-                    }
-                }
-            }label:{
-                Text("What Orientation Would You Like To Use?")
-                    .foregroundStyle(.black)
-                    .frame(width: 350, height: 25)
-                    .background(decisionColor)
-                    .clipShape(RoundedRectangle(cornerRadius: 5.0))
-            }
-            Text("Orientation Selected: ")
+            NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor))
             
             
             
@@ -78,7 +85,5 @@ struct SetupView: View {
        
     }
 }
-#Preview {
-    SetupView()
-}
+
 
