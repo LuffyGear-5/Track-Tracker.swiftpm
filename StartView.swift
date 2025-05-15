@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StartView: View{
-    @State var alertColor: Color = .black   
+    @Binding var alertColor: Color
     @State var selectedView: AnyView = AnyView(BlankView())
     @State var customColor2: Color = .red
     @State var devicePrompt = false
