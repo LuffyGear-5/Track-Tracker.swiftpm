@@ -2,7 +2,13 @@ import SwiftUI
 
 struct HighJump: View {
     @State private var inputText: String = ""
-    @State private var numbers: [String] = []
+    @State private var numbers: [String] = [] {
+        didSet {
+            saveNumbers()
+        }
+    }
+    
+    private let numbersKey = "SavedHighJumpNumbers"
     
     var body: some View {
         VStack {
@@ -14,8 +20,7 @@ struct HighJump: View {
             }
             
             HStack {
-                TextField("Enter your height in feet and in'", text: $inputText)
-                
+                TextField("Enter your height in feet and inches", text: $inputText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
@@ -25,19 +30,30 @@ struct HighJump: View {
                 }
             }
         }
+        .onAppear(perform: loadNumbers)
     }
     
     func addNumber() {
-        
+        guard !inputText.isEmpty else { return }
         numbers.append(inputText)
         inputText = ""
-        
     }
     
     func deleteNumber(at offsets: IndexSet) {
         numbers.remove(atOffsets: offsets)
     }
+    
+    func saveNumbers() {
+        UserDefaults.standard.set(numbers, forKey: numbersKey)
+    }
+    
+    func loadNumbers() {
+        if let savedNumbers = UserDefaults.standard.stringArray(forKey: numbersKey) {
+            numbers = savedNumbers
+        }
+    }
 }
+
 #Preview {
     HighJump()
 }
