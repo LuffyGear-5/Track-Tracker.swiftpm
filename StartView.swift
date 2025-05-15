@@ -38,7 +38,7 @@ struct StartView: View{
                         Text("")
                     }
                 .alert("Are you ready to set up your app?", isPresented: $devicePrompt) {
-                    NavigationLink("Let's Do It!", destination: SetupView(alertColor: $alertColor))
+                    NavigationLink("Let's Do It!", destination: SetupView())
                 } message: {
                     Text("")
                 }

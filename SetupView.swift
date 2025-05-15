@@ -7,12 +7,11 @@ struct SetupView: View {
     @State var deviceModelDisplay = ""
     @State var question = ""
     @State var decisionColor: Color = .black
-    
-    @Binding var alertColor : Color
+    @State var deviceModelState2 = ""
     var body: some View {
         VStack{
             
-            Text("Current Device: \(deviceModel) \(deviceModelNumbered)\(deviceModelState)")
+            Text("Current Device: \(deviceModel) \(deviceModelNumbered) \(deviceModelState)")
                 .padding(50)
             Menu{
                 Button{
@@ -44,35 +43,32 @@ struct SetupView: View {
             }
             Text(deviceModelDisplay)
             .padding(20)
-            TextField("Leave empty if you're on iPad", text: $deviceModelNumbered)
-                .keyboardType(.numberPad)
-                .frame(width: 300, height: 20)
-                .textFieldStyle(.roundedBorder)
-                .multilineTextAlignment(.center)
-                .padding(20)
            
             Menu{
                 Button{
-                    deviceModelState = "Air"
-                   
+                    
                 }label:{
-                    Text("Air (iPad)")
+                    HStack{
+                        Text("Portrait")
+                        Image(systemName: "rectangle.portrait")
+                    }
                 }
                 Button{
-                    deviceModelState = "Pro"
                     
                 }label:{
-                    Text("Pro")
+                    HStack{
+                        Text("Portrait")
+                        Image(systemName: "ipad.gen2.landscape")
+                    }
                 }
             }label:{
-                Text(question)
+                Text("What Orientation Would You Like To Use?")
                     .foregroundStyle(.black)
-                    .frame(width: 130, height: 25)
+                    .frame(width: 350, height: 25)
                     .background(decisionColor)
                     .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                    
             }
-            Spacer()
+            Text("Orientation Selected: ")
             
             
             
@@ -82,5 +78,7 @@ struct SetupView: View {
        
     }
 }
-
+#Preview {
+    SetupView()
+}
 
