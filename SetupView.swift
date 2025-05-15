@@ -76,7 +76,10 @@ struct SetupView: View {
                 
             }
             NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor))
-            
+                .foregroundStyle(.black)
+                .frame(width: 200, height: 25)
+                .background(decisionColor)
+                .clipShape(RoundedRectangle(cornerRadius: 5.0))
             
             
             
