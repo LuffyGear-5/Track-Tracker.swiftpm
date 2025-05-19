@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StartView: View{
-    @Binding var alertColor: Color
+    @State var alertColor: Color
     @State var selectedView: AnyView = AnyView(BlankView())
     @State var customColor2: Color = .red
     @State var devicePrompt = false
@@ -15,7 +15,7 @@ struct StartView: View{
             
             Spacer()
             
-            NavigationLink("Begin!", destination: ContentView( alertColor: $alertColor))
+            NavigationLink("Begin!", destination: ContentView(alertColor: $alertColor))
                 .foregroundStyle(.black)
                 .frame(width: 110, height: 60)
                 .background(customColor2)
