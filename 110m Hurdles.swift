@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Hurdles110m: View {
     @State var inputText: String = ""
-    @AppStorage("doubleArray") var arrayStorage: String = ""
+    @AppStorage("doubleArray7") var arrayStorage: String = ""
     @State var doubles: [Double] = []
     @State var dates: [Date] = []
     @State var currentDate = Date()
