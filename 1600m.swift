@@ -2,7 +2,7 @@ import SwiftUI
 
 struct m1600: View {
     @State var inputText: String = ""
-    @AppStorage("doubleArray") var arrayStorage: String = ""
+    @AppStorage("doubleArray2") var arrayStorage: String = ""
     @State var doubles: [Double] = []
     @State var dates: [Date] = []
     @State var currentDate = Date()

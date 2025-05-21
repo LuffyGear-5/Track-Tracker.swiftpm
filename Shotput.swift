@@ -5,8 +5,8 @@ struct Shotput: View {
     @State private var numbers: [Double] = []
     @State private var numbers2: [Double] = []
 
-    private let metersKey = "SavedMeters"
-    private let feetKey = "SavedFeet"
+    private let metersKey = "SavedMeters2"
+    private let feetKey = "SavedFeet2"
 
     var body: some View {
         VStack {
