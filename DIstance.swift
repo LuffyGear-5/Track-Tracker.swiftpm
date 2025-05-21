@@ -20,7 +20,7 @@ struct DistanceView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 60))                })
+                        .font(.custom("copperplate", size: 60))                })
                 .padding()
                 .foregroundStyle(.black)
                 .font(.system(size: 60))
@@ -33,7 +33,7 @@ struct DistanceView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -47,7 +47,7 @@ struct DistanceView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -61,7 +61,7 @@ struct DistanceView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -75,7 +75,7 @@ struct DistanceView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)

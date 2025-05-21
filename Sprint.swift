@@ -19,7 +19,7 @@ struct SprintView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 55))
+                        .font(.custom("copperplate", size: 55))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -33,7 +33,7 @@ struct SprintView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 55))
+                        .font(.custom("copperplate", size: 55))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -47,7 +47,7 @@ struct SprintView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 55))
+                        .font(.custom("copperplate", size: 55))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -61,7 +61,7 @@ struct SprintView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 55))
+                        .font(.custom("copperplate", size: 55))
                 })
                 .padding()
                 .foregroundStyle(alertColor)
@@ -75,7 +75,7 @@ struct SprintView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
             
-                        .font(.custom("Verdana", size: 55))
+                        .font(.custom("copperplate", size: 55))
                 })
                 .padding()
                 .foregroundStyle(.black)
