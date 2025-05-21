@@ -10,14 +10,15 @@ struct SetupView: View {
     @State var deviceModelState2 = ""
     @Binding var alertColor: Color
     @State var decisionColor2: Color = .black
+    @State var orientationSelected = ""
     var body: some View {
         NavigationStack{
             VStack{
                 
                 Text("Selected Device: \(deviceModel) ")
                 
-                Text("Orientation Selected: ")
-                    .padding(50)
+                Text("Orientation Selected: \(orientationSelected)")
+                    .padding(20)
                 Menu{
                     Button{
                         deviceModel = "iPhone"
@@ -51,6 +52,7 @@ struct SetupView: View {
                 Menu{
                     Button{
                         decisionColor2 = .white
+                        orientationSelected = "Portrait"
                     }label:{
                         HStack{
                             Text("Portrait")
@@ -59,6 +61,7 @@ struct SetupView: View {
                     }
                     Button{
                         decisionColor2 = .white
+                        orientationSelected = "Landscape"
                     }label:{
                         HStack{
                             Text("Landscape")
@@ -72,13 +75,13 @@ struct SetupView: View {
                         .background(decisionColor)
                         .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
-                
+                .padding(20)
                 
             }
             NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor))
                 .foregroundStyle(.black)
                 .frame(width: 200, height: 25)
-                .background(decisionColor)
+                .background(decisionColor2)
                 .clipShape(RoundedRectangle(cornerRadius: 5.0))
             
             
