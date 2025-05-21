@@ -15,12 +15,17 @@ struct StartView: View{
             
             Spacer()
             
-            NavigationLink("Begin!", destination: ContentView(alertColor: $alertColor))
-                .foregroundStyle(.black)
-                .frame(width: 110, height: 60)
-                .background(customColor2)
-                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                .font(.custom("Verdana", size: 20))
+            NavigationLink(destination: SetupView(alertColor: $alertColor), label:{
+                Text("Begin!")
+                    .foregroundStyle(.black)
+                    .frame(width: 110, height: 60)
+                    .background(.red)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                
+                    .font(.custom("Verdana", size: 20))
+                
+                
+            })
             //            Button{
             //                devicePrompt = true
             //
