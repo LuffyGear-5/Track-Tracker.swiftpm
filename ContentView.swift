@@ -28,13 +28,13 @@ struct ContentView: View {
                               systemImage:"f.square")
                     }
                 
-                SprintView(customColor: $customColor)
+                SprintView(customColor: $customColor, alertColor: $alertColor)
                     .tabItem{
                         Label("Sprint",
                               systemImage:"s.square")
                     }
                 
-                DistanceView(customColor: $customColor)
+                DistanceView(customColor: $customColor, alertColor: $alertColor)
                     .tabItem{
                         Label("Distance",
                               systemImage:"d.square")

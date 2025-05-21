@@ -5,8 +5,8 @@ struct Discus: View {
     @State private var numbers: [Double] = []
     @State private var numbers2: [Double] = []
 
-    private let metersKey = "SavedMeters"
-    private let feetKey = "SavedFeet"
+    private let metersKey = "SavedMeters1"
+    private let feetKey = "SavedFeet1"
 
     var body: some View {
         VStack {
