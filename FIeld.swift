@@ -19,7 +19,7 @@ struct FieldView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -33,7 +33,7 @@ struct FieldView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -47,7 +47,7 @@ struct FieldView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -61,7 +61,7 @@ struct FieldView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
@@ -75,7 +75,7 @@ struct FieldView: View {
                         .background(customColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     
-                        .font(.custom("Verdana", size: 60))
+                        .font(.custom("copperplate", size: 60))
                 })
                 .padding()
                 .foregroundStyle(.black)
