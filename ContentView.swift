@@ -6,7 +6,12 @@ struct ContentView: View {
     @State var SprintJumps = ""
 //    @State var orientation = UIDevice.current.orientation
     @Binding var alertColor : Color
-    @State var customColor: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
+    @Binding var customColor: Color
+    @Binding var red: Double
+    @Binding var green: Double
+    @Binding var blue: Double
+    
+    
     
     
     var body: some View {
@@ -14,7 +19,7 @@ struct ContentView: View {
         HStack{
             Spacer()
             NavigationLink {
-                Appearance(customColor: $customColor, alertColor: $alertColor)
+                Appearance(red: $red, green: $green, blue: $blue, customColor: $customColor, alertColor: $alertColor)
             } label: {
                 Image(systemName: "paintbrush.fill")
                     .foregroundStyle(.white)

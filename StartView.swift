@@ -5,6 +5,10 @@ struct StartView: View{
     @State var selectedView: AnyView = AnyView(BlankView())
     @State var customColor2: Color = .red
     @State var devicePrompt = false
+    @State var blue: Double
+    @State var green: Double
+    @State var red: Double
+    @State var customColor: Color
     var body: some View {
         NavigationStack{
             
@@ -15,7 +19,7 @@ struct StartView: View{
             
             Spacer()
             
-            NavigationLink(destination: SetupView(alertColor: $alertColor), label:{
+            NavigationLink(destination: SetupView(alertColor: $alertColor, customColor: customColor, red: red, green: green, blue: blue), label:{
                 Text("Begin!")
                     .foregroundStyle(.black)
                     .frame(width: 110, height: 60)
