@@ -30,6 +30,16 @@ struct StartView: View{
                 
                 
             })
+            NavigationLink("Begin!", destination: ContentView(alertColor: $alertColor))
+                .foregroundStyle(.black)
+                .frame(width: 110, height: 60)
+                .background(customColor2)
+                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                .font(.custom("copperplate", size: 30))
+            
+                
+                
+            
             //            Button{
             //                devicePrompt = true
             //
