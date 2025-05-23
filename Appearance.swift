@@ -30,9 +30,11 @@ struct Appearance: View {
             Slider(value: $blue, in: 0...1)
         }
         .padding()
-        .onChange(of: red) { _ in updateColor() }
-        .onChange(of: green) { _ in updateColor() }
-        .onChange(of: blue) { _ in updateColor() }
+        
+            .onChange(of: red) { _ in updateColor() }
+            .onChange(of: green) { _ in updateColor() }
+            .onChange(of: blue) { _ in updateColor() }
+        
         Button{
             reset()
         }label:{

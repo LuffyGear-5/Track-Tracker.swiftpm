@@ -74,7 +74,7 @@ struct SetupView: View {
         .onChange(of: red) { _ in updateColor() }
         .onChange(of: green) { _ in updateColor() }
         .onChange(of: blue) { _ in updateColor() }
-       
+       Text("This Can Be Changed Later")
         NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor, customColor: $customColor, red: $red, green: $green, blue: $blue))
             .foregroundStyle(.black)
             .frame(width: 200, height: 25)
