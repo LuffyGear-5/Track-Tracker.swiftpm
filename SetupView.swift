@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct SetupView: View {
     @State var deviceModel = ""
@@ -11,13 +12,15 @@ struct SetupView: View {
     @Binding var alertColor: Color
     @State var decisionColor2: Color = .black
     @State var orientationSelected = ""
+    @State var customColor: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
+    @State var red: Double
+    @State var green: Double
+    @State var blue: Double
     var body: some View {
         NavigationStack{
             VStack{
                 
                 Text("Selected Device: \(deviceModel) ")
-                
-                Text("Orientation Selected: \(orientationSelected)")
                     .padding(20)
                 Menu{
                     Button{
@@ -25,7 +28,7 @@ struct SetupView: View {
                         deviceModelDisplay = "iPhone"
                         deviceModelState = ""
                         question = "Which Model?"
-                        decisionColor = .white
+                        decisionColor2 = .white
                     }label:{
                         Text("iPhone")
                     }
@@ -35,7 +38,7 @@ struct SetupView: View {
                         deviceModelNumbered = ""
                         deviceModelState = ""
                         question = "Which Model?"
-                        decisionColor = .white
+                        decisionColor2 = .white
                     }label:{
                         Text("iPad")
                     }
@@ -48,48 +51,48 @@ struct SetupView: View {
                     
                 }
                 .padding(20)
-                
-                Menu{
-                    Button{
-                        decisionColor2 = .white
-                        orientationSelected = "Portrait"
-                    }label:{
-                        HStack{
-                            Text("Portrait")
-                            Image(systemName: "rectangle.portrait")
-                        }
-                    }
-                    Button{
-                        decisionColor2 = .white
-                        orientationSelected = "Landscape"
-                    }label:{
-                        HStack{
-                            Text("Landscape")
-                            Image(systemName: "ipad.gen2.landscape")
-                        }
-                    }
-                }label:{
-                    Text("What Orientation Would You Like To Use?")
-                        .foregroundStyle(.black)
-                        .frame(width: 350, height: 25)
-                        .background(decisionColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                }
-                .padding(20)
-                
             }
-            NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor))
-                .foregroundStyle(.black)
-                .frame(width: 200, height: 25)
-                .background(decisionColor2)
-                .clipShape(RoundedRectangle(cornerRadius: 5.0))
-            
-            
-            
-         
         }
+        
+        
+        VStack(spacing: 20) {
+            Rectangle()
+                .fill(customColor)
+                .frame(width: 200, height: 100)
+                .border(Color.gray, width: 4)
+            
+            Text("Red: \(red, specifier: "%.2f")")
+            Slider(value: $red, in: 0...1)
+            
+            Text("Green: \(green, specifier: "%.2f")")
+            Slider(value: $green, in: 0...1)
+            
+            Text("Blue: \(blue, specifier: "%.2f")")
+            Slider(value: $blue, in: 0...1)
+        }
+        .padding()
+        .onChange(of: red) { _ in updateColor() }
+        .onChange(of: green) { _ in updateColor() }
+        .onChange(of: blue) { _ in updateColor() }
        
+        NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor, customColor: $customColor, red: $red, green: $green, blue: $blue))
+            .foregroundStyle(.black)
+            .frame(width: 200, height: 25)
+            .background(decisionColor2)
+            .clipShape(RoundedRectangle(cornerRadius: 5.0))
     }
+    
+    func updateColor() {
+        customColor = Color(red: red, green: green, blue: blue)
+        
+        if red > 0.1 || green > 0.1 || blue > 0.1 {
+            alertColor = .black
+        }
+        if red < 0.3 || green < 0.3 || blue < 0.3 {
+            alertColor = .white
+        }
+    }
+    
+    
 }
-
 

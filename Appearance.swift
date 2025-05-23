@@ -2,9 +2,9 @@ import SwiftUI
 
 
 struct Appearance: View {
-    @State var red: Double = 0.35
-    @State var green: Double = 0.76
-    @State var blue: Double = 0.96
+    @Binding var red: Double
+    @Binding var green: Double
+    @Binding var blue: Double 
     @Binding var customColor: Color
     @Binding var alertColor: Color
     
