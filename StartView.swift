@@ -21,17 +21,10 @@ struct StartView: View{
                 .background(customColor2)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 .font(.custom("copperplate", size: 30))
-            NavigationLink(destination: SetupView(alertColor: $alertColor), label:{
-                Text("Begin!")
-                    .foregroundStyle(.black)
-                    .frame(width: 110, height: 60)
-                    .background(.red)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                
-                    .font(.custom("Verdana", size: 20))
+            
                 
                 
-            })
+            
             //            Button{
             //                devicePrompt = true
             //
