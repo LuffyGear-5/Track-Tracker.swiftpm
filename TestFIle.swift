@@ -1,24 +1,38 @@
 import SwiftUI
 
+struct TestFIle: View {
+    @State private var name = ""
+    @State private var athlete: Athlete?
 
-struct TestView: View {
- @State var currentDate = Date()
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
-        VStack{
-           Text("Current Date and Time:")
-                .font(.headline)
-            Text(currentDate.formatted(date: .long, time: .standard))
-                .font(.title2)
+        VStack {
+            TextField("Enter athlete name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+
+            Button("Fetch Data") {
+                fetchAthlete(name: name) { result in
+                    self.athlete = result
+                }
+            }
+
+            if let athlete = athlete {
+                Text("Results for \(athlete.name)")
+                    .font(.headline)
+
+                List(athlete.performances, id: \.event) { perf in
+                    VStack(alignment: .leading) {
+                        Text(perf.event).bold()
+                        Text("Time: \(perf.time)")
+                        Text("Meet: \(perf.meet)")
+                    }
+                }
+            }
         }
         .padding()
-        .onReceive(timer) { input in
-            currentDate = input
-        }
     }
 }
 
 #Preview {
-    TestView()
+    TestFIle()
 }
