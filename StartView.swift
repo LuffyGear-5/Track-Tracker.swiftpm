@@ -24,7 +24,7 @@ struct StartView: View{
                 .frame(width: 110, height: 60)
                 .background(customColor2)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                .font(.custom("copperplate", size: 30))
+                .font(.custom("copperplate", size: 20))
                 .offset(x: move ? 200 : 0)
                 .animation(.easeInOut(duration: 4), value: move)
             Spacer()

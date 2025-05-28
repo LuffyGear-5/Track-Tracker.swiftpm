@@ -31,7 +31,7 @@ struct m400: View {
             }
             
             HStack {
-                TextField("Enter your time", text: $inputText)
+                TextField("Enter your time in seconds", text: $inputText)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
