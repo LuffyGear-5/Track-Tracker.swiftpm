@@ -25,6 +25,6 @@ struct StartView: View{
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 .font(.custom("copperplate", size: 30))
             Spacer()
-                           }
-                           }
-                           }
+        }
+    }
+}
