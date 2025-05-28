@@ -11,8 +11,58 @@ struct AppCreatorsView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(.blue)
                 
-                
-                
+                HStack{
+                    Image("AadiShah")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    Text("Aadi Shah: Lead Coder")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                }
+                HStack{
+                    Image("DominicGalan")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    Text("Dominic Galan: Co-Lead Coder")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                }
+                HStack{
+                    Image("MatthewBarton")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    Text("Matthew Barton: Designer")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                }
+                HStack{
+                    Image("DmytroShumyk")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    Text("Dmytro Shumyk: Designer")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                }
                 
                     .padding()
                     .background(Color(.systemGray6))
