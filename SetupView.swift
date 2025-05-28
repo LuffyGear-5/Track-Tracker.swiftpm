@@ -12,7 +12,7 @@ struct SetupView: View {
     @Binding var alertColor: Color
     @State var decisionColor2: Color = .black
     @State var orientationSelected = ""
-    @State var customColor: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
+    @Binding var customColor: Color
     @State var red: Double
     @State var green: Double
     @State var blue: Double
@@ -75,7 +75,7 @@ struct SetupView: View {
         .onChange(of: green) { _ in updateColor() }
         .onChange(of: blue) { _ in updateColor() }
        Text("This Can Be Changed Later")
-        NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: $alertColor, customColor: $customColor, red: $red, green: $green, blue: $blue))
+        NavigationLink("Finish Set Up ->", destination: ContentView(alertColor: .black, customColor: customColor, red: red, green: green, blue: blue))
             .foregroundStyle(.black)
             .frame(width: 200, height: 25)
             .background(decisionColor2)

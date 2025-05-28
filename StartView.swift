@@ -19,7 +19,7 @@ struct StartView: View{
                 .scaledToFit()
             
             Spacer()
-            NavigationLink("Begin!", destination: SetupView(alertColor: $alertColor, customColor: customColor, red: red, green: green, blue: blue))
+            NavigationLink("Begin!", destination: SetupView(alertColor: $alertColor, customColor: $customColor, red: red, green: green, blue: blue))
                 .foregroundStyle(.black)
                 .frame(width: 110, height: 60)
                 .background(customColor2)
