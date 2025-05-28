@@ -47,11 +47,10 @@ struct Appearance: View {
     func updateColor() {
         customColor = Color(red: red, green: green, blue: blue)
         
-        if red > 0.1 || green > 0.1 || blue > 0.1 {
-            alertColor = .black
-        }
-        if red < 0.3 || green < 0.3 || blue < 0.3 {
+        if red < 0.3 && green < 0.3 && blue < 0.3 {
             alertColor = .white
+        } else {
+            alertColor = .black
         }
     }
     func reset() {
