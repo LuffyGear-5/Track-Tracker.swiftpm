@@ -5,11 +5,11 @@ struct ContentView: View {
     @State var Distance = ""
     @State var SprintJumps = ""
 //    @State var orientation = UIDevice.current.orientation
-    @Binding var alertColor : Color
-    @Binding var customColor: Color
-    @Binding var red: Double
-    @Binding var green: Double
-    @Binding var blue: Double
+    @State var alertColor : Color
+    @State var customColor: Color = Color(red: 0.35, green: 0.76, blue: 0.96)
+    @State var red: Double
+    @State var green: Double
+    @State var blue: Double
     
     
     
@@ -51,5 +51,7 @@ struct ContentView: View {
             
             
         }
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
