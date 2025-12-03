@@ -7,6 +7,7 @@ struct DistanceView: View {
     @State private var move = false
     @Binding var customColor : Color
     @Binding var alertColor : Color
+    @State var animate = false
     var body: some View {
         ZStack{
             VStack{
