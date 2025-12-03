@@ -13,26 +13,98 @@ struct FieldView: View {
         NavigationStack{
             ZStack{
                 VStack{
-                    ForEach(links.indices, id: \.self) { index in
-                        NavigationLink(destination: Text("\(links[index]) Detail View")) {
-                            Text(links[index])
-                                .padding()
-                                .cornerRadius(10)
-                                .opacity(animate ? 1 : 0)
-                                .offset(x: animate ? 0 : -100)
-                                .foregroundStyle(alertColor)
-                                .frame(width: 400, height: 80)
-                                .background(customColor)
-                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                            
-                                .font(.custom("copperplate", size: 40))
-                                .animation(
-                                    .easeOut.delay(Double(index) * 0.1),
-                                    value: animate
-                                )
-                        }
-                    }
-                    
+//                    ForEach(links.indices, id: \.self) { index in
+//                        NavigationLink(destination: Text("\(links[index]) Detail View")) {
+//                            Text(links[index])
+//                                .padding()
+//                                .cornerRadius(10)
+//                                .opacity(animate ? 1 : 0)
+//                                .offset(x: animate ? 0 : -100)
+//                                .foregroundStyle(alertColor)
+//                                .frame(width: 400, height: 80)
+//                                .background(customColor)
+//                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+//                            
+//                                .font(.custom("copperplate", size: 40))
+//                                .animation(
+//                                    .easeOut.delay(Double(index) * 0.1),
+//                                    value: animate
+//                                )
+//                        }
+//                    }
+//                    
+//                    
+//                }
+                    NavigationLink(destination: {
+                        LongJump()
+                    }, label: {
+                        Text("Long Jump")
+                        
+                            .foregroundStyle(alertColor)
+                            .frame(width: 400, height: 80)
+                            .background(customColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                        .font(.custom("copperplate", size: 60))                })
+                    .padding()
+                    .foregroundStyle(.black)
+                    .font(.system(size: 60))
+                    NavigationLink(destination: {
+                        HighJump()
+                    }, label: {
+                        Text("High Jump")
+                            .foregroundStyle(alertColor)
+                            .frame(width: 400, height: 80)
+                            .background(customColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                            .font(.custom("copperplate", size: 60))
+                    })
+                    .padding()
+                    .foregroundStyle(alertColor)
+                    .font(.system(size: 60))
+                    NavigationLink(destination: {
+                        TripleJump()
+                    }, label: {
+                        Text("Triple Jump")
+                            .foregroundStyle(alertColor)
+                            .frame(width: 400, height: 80)
+                            .background(customColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                            .font(.custom("copperplate", size: 60))
+                    })
+                    .padding()
+                    .foregroundStyle(.black)
+                    .font(.system(size: 60))
+                    NavigationLink(destination: {
+                        Shotput()
+                    }, label: {
+                        Text("Shotput")
+                            .foregroundStyle(alertColor)
+                            .frame(width: 400, height: 80)
+                            .background(customColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                            .font(.custom("copperplate", size: 60))
+                    })
+                    .padding()
+                    .foregroundStyle(alertColor)
+                    .font(.system(size: 60))
+                    NavigationLink(destination: {
+                        Discus()
+                    }, label: {
+                        Text("Discuss")
+                            .foregroundStyle(alertColor)
+                            .frame(width: 400, height: 80)
+                            .background(customColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                            .font(.custom("copperplate", size: 60))
+                    })
+                    .padding()
+                    .foregroundStyle(.black)
+                    .font(.system(size: 60))
                     
                 }
                 .padding()
