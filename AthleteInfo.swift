@@ -9,4 +9,5 @@ struct Performance: Codable {
     let event: String
     let time: String
     let meet: String
+    let sixseven: String
 }
