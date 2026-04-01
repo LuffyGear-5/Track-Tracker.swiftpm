@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StartView: View{
     @State var alertColor: Color
-    @State var selectedView: AnyView = AnyView(BlankView())
+    @State var selectedView: AnyView = AnyView(LoadingAnimation())
     @State var customColor2: Color = .red
     @State var devicePrompt = false
     @State var blue: Double

@@ -2,7 +2,7 @@ import SwiftUI
 
 
 
-struct BlankView: View {
+struct LoadingAnimation: View {
     @State private var isScaledUp = false
 
         var body: some View {
@@ -22,5 +22,5 @@ struct BlankView: View {
     }
 
 #Preview {
-    BlankView()
+   LoadingAnimation()
 }
